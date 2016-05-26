@@ -17,14 +17,10 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/klte/klte-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/kltedcm/kltedcm-vendor.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-# NFC
-PRODUCT_PACKAGES += \
-    nfc_nci.pn54x.default
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
